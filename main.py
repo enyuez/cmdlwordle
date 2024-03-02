@@ -17,7 +17,7 @@ OPTIONS = [
 ]
 INSTRUCTIONS = [
   "1. You have 6 guesses to find the secret 5-letter word.",
-  "2. Each guess must be a valid five-letter word",
+  "2. Each guess must be a valid five-letter word - a Valid Word is a 5 letter word found in our game dictionary (sgb-words.txt)",
   "3. The color of a letter will change to show you how close your guess was",
   "4. If the letter turns green, the letter is in the word, and it is in the correct spot",
   "5. If the letter turns yellow, the letter is in the word, but it is not in the correct spot",
@@ -31,7 +31,7 @@ def start_game(SECRET_WORD):
 
   while (gr > 0):
     user_g = input("Please input your guess: ").casefold()
-
+    # Check that guess is valid word 
     if len(user_g) != 5:
       print(
         f"You guessed {user_g}; this is invalid because it is not 5 characters long. Please try again. You have {gr} guesses remaining."
